@@ -6,7 +6,11 @@ import { renderToDom } from "../utils/renderToDom.js";
 // Reusable function to get the cards on the DOM
 // .forEach()
 const renderCards = (array) => {
-  let refStuff = "<h1 class='text-white'>Cards Go Here!</h1>";
+  let refStuff = " ";
+  array.forEach((taco) => {
+    refStuff += card(taco); 
+  })
+
   renderToDom("#cards", refStuff);
 }
 
@@ -29,7 +33,7 @@ const search = (event) => {
 // .filter() & .reduce() &.sort() - chaining
 const buttonFilter = (event) => {
   if(event.target.id.includes('free')) {
-    console.log('FREE')
+    const free = referenceList.filter(taco)
   }
   if(event.target.id.includes('cartFilter')) {
     console.log('cartFilter')
